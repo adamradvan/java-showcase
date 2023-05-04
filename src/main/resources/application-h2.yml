@@ -1,0 +1,14 @@
+database:
+  name: "showcase"
+  owner:
+    name: sa
+    password:
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:${database.name}
+    username: ${database.owner.name}
+    password: ${database.owner.password}
+    driver-class-name: org.h2.Driver
+  jpa:
+    database: H2
