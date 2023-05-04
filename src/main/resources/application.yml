@@ -6,7 +6,7 @@ database:
 
 spring:
   application:
-    title: Radvan Showcase
+    name: Radvan Showcase
   datasource:
     url: jdbc:postgresql://localhost:5432/${database.name}
     username: ${database.owner.name}
