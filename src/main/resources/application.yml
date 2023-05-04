@@ -5,6 +5,8 @@ database:
     password: root
 
 spring:
+  application:
+    title: Radvan Showcase
   datasource:
     url: jdbc:postgresql://localhost:5432/${database.name}
     username: ${database.owner.name}
@@ -19,3 +21,16 @@ spring:
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy # replaces SpringPhysicalNamingStrategy
+
+logging:
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr([%4.15t]){faint} %clr(%-50.50logger{49}){yellow} %clr(:){red} %m%n%wEx"
+  file:
+    name: ./logs/application.log
+  level:
+    root: info
+#    "org.springframework.web": trace              # uncomment to log web request filter chain
+#    "org.springframework.security.web": trace     # uncomment to log request's security chain
+#    "org.hibernate.SQL": debug                    # uncomment to log Hibernate SQL queries
+#    "org.hibernate.type.descriptor.sql": trace    # uncomment to log Hibernate prepare statement parameters
+#    "com.zaxxer.hikari": debug                    # uncomment to log hikari DB connection details
