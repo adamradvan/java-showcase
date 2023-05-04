@@ -1,0 +1,15 @@
+database:
+  name: "showcase"
+  owner:
+    name: postgres
+    password: root
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${database.name}
+    username: ${database.owner.name}
+    password: ${database.owner.password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+
