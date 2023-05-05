@@ -8,6 +8,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "shwcs_coach")
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter

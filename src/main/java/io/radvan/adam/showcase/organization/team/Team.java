@@ -7,9 +7,7 @@ import io.radvan.adam.showcase.organization.player.TeamPlayer;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldNameConstants;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
@@ -21,8 +19,10 @@ import java.util.stream.Collectors;
 
 import static io.radvan.adam.showcase.common.constants.EntityConstants.BATCH_SIZE;
 
+@Builder(toBuilder = true)
 @Entity
 @Table(name = "shwcs_team")
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -68,7 +68,7 @@ public class Team extends AuditedEntity implements Labeled {
         return coaches.stream()
                 .filter(TeamCoach::isHeadCoach)
                 .findFirst()
-                .orElseThrow();
+                .orElse(null);
     }
 
     @Override

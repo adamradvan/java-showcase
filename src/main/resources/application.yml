@@ -1,18 +1,27 @@
 spring:
+  application:
+    name: Radvan Showcase
+
+  config:
+    import: secrets.yml
+
   profiles:
     default: postgres
 #    active: h2
-  application:
-    name: Radvan Showcase
+
   jpa:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: 'create'
+      ddl-auto: 'update'
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy # replaces SpringPhysicalNamingStrategy
     open-in-view: false
+
+  jackson:
+    serialization:
+      indent_output: true
 
 logging:
   pattern:
@@ -26,3 +35,14 @@ logging:
     "org.hibernate.SQL": debug                    # uncomment to log Hibernate SQL queries
 #    "org.hibernate.type.descriptor.sql": trace    # uncomment to log Hibernate prepare statement parameters
 #    "com.zaxxer.hikari": debug                    # uncomment to log hikari DB connection details
+
+app:
+  synchronization:
+    enabled: false
+    connect-timeout: 10s
+    read-timeout: 1m
+    api:
+      key:  # <IMPORTED  secrets.yml>
+      host: # <IMPORTED  secrets.yml>
+    teams:
+      cron: "-"

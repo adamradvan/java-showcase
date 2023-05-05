@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name = "shwcs_team_player")
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
