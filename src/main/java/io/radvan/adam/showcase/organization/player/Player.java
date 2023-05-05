@@ -6,6 +6,7 @@ import io.radvan.adam.showcase.person.Person;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,6 +24,7 @@ import static io.radvan.adam.showcase.common.constants.EntityConstants.BATCH_SIZ
 
 @Entity
 @Table(name = "shwcs_player")
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter

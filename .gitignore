@@ -38,3 +38,6 @@ out/
 
 ### Custom ###
 /logs/
+
+# Add secrets properties
+/src/main/resources/secrets.yml

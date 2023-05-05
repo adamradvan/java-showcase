@@ -6,6 +6,7 @@ import io.radvan.adam.showcase.organization.team.Team;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,7 @@ import static io.radvan.adam.showcase.common.constants.EntityConstants.BATCH_SIZ
 
 @Entity
 @Table(name = "shwcs_team_coach")
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter

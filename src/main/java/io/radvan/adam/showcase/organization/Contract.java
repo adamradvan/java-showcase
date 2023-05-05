@@ -5,6 +5,7 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import org.hibernate.annotations.FetchMode;
 
 import java.time.LocalDate;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
